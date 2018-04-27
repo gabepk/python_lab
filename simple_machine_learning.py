@@ -10,7 +10,6 @@ class PerceptronNeuralNetwork:
         self.error = 0
 
 
-
     def treinar(self, inputs, outputs, num):
         for iteration in range(num):
 
@@ -26,7 +25,6 @@ class PerceptronNeuralNetwork:
             self.peso += adjustment
 
 
-
     def testar(self, inputs):
         # Calcula 1 output para cada input
         resultado = dot(inputs, self.peso)
@@ -34,7 +32,6 @@ class PerceptronNeuralNetwork:
         # Usa a funcao de ativacao sigmoid para normalizar output
         resultado_normalizado = self.sigmoide(resultado);
         return resultado_normalizado
-
 
 
     def sigmoide(self, x):
@@ -62,9 +59,7 @@ outputs = array([[1],
 
 network.treinar(inputs, outputs, 1000)
 
-# (+ treino && + dados) => peso+ajustado
-# peso+ajustado => - erro
-
+# (+ treino && + dados) => peso+ajustado => - erro
 # Um erro pra cada input
 print("Erro: \n%s\n" % network.error)
 
